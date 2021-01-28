@@ -16,6 +16,8 @@
 		8B2BD4B925C3091D00D78E8C /* RxSwift_LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BD4B825C3091D00D78E8C /* RxSwift_LoginTests.swift */; };
 		8B2BD4C425C3091D00D78E8C /* RxSwift_LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BD4C325C3091D00D78E8C /* RxSwift_LoginUITests.swift */; };
 		8B2BD4E625C309F900D78E8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BD4E525C309F900D78E8C /* LoginViewController.swift */; };
+		8B2BD4EF25C3145B00D78E8C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BD4EE25C3145B00D78E8C /* LoginViewModel.swift */; };
+		8B2BD4F825C3146400D78E8C /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BD4F725C3146400D78E8C /* Login.swift */; };
 		FD30C8D10A9808CCB36261CA /* Pods_RxSwift_LoginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBEA414FB3846AE3AFFC63E /* Pods_RxSwift_LoginTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		8B2BD4C325C3091D00D78E8C /* RxSwift_LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_LoginUITests.swift; sourceTree = "<group>"; };
 		8B2BD4C525C3091D00D78E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B2BD4E525C309F900D78E8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8B2BD4EE25C3145B00D78E8C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8B2BD4F725C3146400D78E8C /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		9E2CD154F7F5C4FC6486DDE1 /* Pods-RxSwift-Login-RxSwift-LoginUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Login-RxSwift-LoginUITests.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-Login-RxSwift-LoginUITests/Pods-RxSwift-Login-RxSwift-LoginUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D298F4EF59F6A675967AB736 /* Pods-RxSwift-LoginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-LoginTests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift-LoginTests/Pods-RxSwift-LoginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECA46012C616ABD5FAAE2AA8 /* Pods-RxSwift-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Login.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-Login/Pods-RxSwift-Login.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		8B2BD4A025C3091A00D78E8C /* RxSwift-Login */ = {
 			isa = PBXGroup;
 			children = (
+				8B2BD4F325C3145E00D78E8C /* Model */,
+				8B2BD4ED25C3144E00D78E8C /* ViewModel */,
 				8B2BD4A125C3091A00D78E8C /* AppDelegate.swift */,
 				8B2BD4A325C3091A00D78E8C /* SceneDelegate.swift */,
 				8B2BD4AA25C3091D00D78E8C /* Assets.xcassets */,
@@ -150,6 +156,22 @@
 				8B2BD4C525C3091D00D78E8C /* Info.plist */,
 			);
 			path = "RxSwift-LoginUITests";
+			sourceTree = "<group>";
+		};
+		8B2BD4ED25C3144E00D78E8C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B2BD4EE25C3145B00D78E8C /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B2BD4F325C3145E00D78E8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B2BD4F725C3146400D78E8C /* Login.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B21905B69660F92ACBE6E352 /* Pods */ = {
@@ -402,6 +424,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2BD4EF25C3145B00D78E8C /* LoginViewModel.swift in Sources */,
+				8B2BD4F825C3146400D78E8C /* Login.swift in Sources */,
 				8B2BD4E625C309F900D78E8C /* LoginViewController.swift in Sources */,
 				8B2BD4A225C3091A00D78E8C /* AppDelegate.swift in Sources */,
 				8B2BD4A425C3091A00D78E8C /* SceneDelegate.swift in Sources */,

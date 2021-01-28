@@ -8,8 +8,16 @@
 import UIKit
 import SnapKit
 import Then
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
+
+    let disposeBag = DisposeBag()
+    let viewModel = LoginViewModel()
+
+    let userEmail = "pino-day@test.co.kr"
+    let userPassword = "test123"
 
     // MARK: - Properties
     private let titleLabel = UILabel().then {
@@ -54,6 +62,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
 
         configureUI()
+        setupControl()
     }
 
     // MARK: - Helpers
@@ -99,6 +108,43 @@ class LoginViewController: UIViewController {
             $0.top.equalTo(passwordView.snp.bottom).offset(50)
             $0.leading.trailing.equalTo(emailView)
         }
+    }
+
+    func setupControl() {
+        emailTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.emailObserver)
+            .disposed(by: disposeBag)
+
+        passwordTextField.rx.text
+            .orEmpty
+            .bind(to: viewModel.passwordObserver)
+            .disposed(by: disposeBag)
+
+        viewModel.isValid.bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        viewModel.isValid
+            .map { $0 ? 1 : 0.3 }
+            .bind(to: loginButton.rx.alpha)
+            .disposed(by: disposeBag)
+
+        loginButton.rx.tap.subscribe(
+            onNext: { [weak self] _ in
+                if self?.userEmail == self?.viewModel.emailObserver.value &&
+                    self?.userPassword == self?.viewModel.passwordObserver.value {
+                    let alert = UIAlertController(title: "로그인 성공", message: "환영합니다", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "확인", style: .default)
+                    alert.addAction(ok)
+                    self?.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "로그인 실패", message: "아이디 혹은 비밀번호를 다시 확인해주세요", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "확인", style: .default)
+                    alert.addAction(ok)
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            }
+        ).disposed(by: disposeBag)
     }
 
 }
