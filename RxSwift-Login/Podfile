@@ -11,6 +11,7 @@ target 'RxSwift-Login' do
   pod 'RxCocoa'
   pod 'SnapKit'
   pod 'Then'
+  pod 'AppCenter'
 
   target 'RxSwift-LoginTests' do
     inherit! :search_paths

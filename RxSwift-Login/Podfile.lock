@@ -1,4 +1,12 @@
 PODS:
+  - AppCenter (4.1.0):
+    - AppCenter/Analytics (= 4.1.0)
+    - AppCenter/Crashes (= 4.1.0)
+  - AppCenter/Analytics (4.1.0):
+    - AppCenter/Core
+  - AppCenter/Core (4.1.0)
+  - AppCenter/Crashes (4.1.0):
+    - AppCenter/Core
   - RxCocoa (6.0.0):
     - RxRelay (= 6.0.0)
     - RxSwift (= 6.0.0)
@@ -9,6 +17,7 @@ PODS:
   - Then (2.7.0)
 
 DEPENDENCIES:
+  - AppCenter
   - RxCocoa
   - RxSwift
   - SnapKit
@@ -16,6 +25,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AppCenter
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -23,12 +33,13 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
+  AppCenter: 8832b158d17e54845c3b88a91076218f0b07174d
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 0f23dc27bd59170a26cbbb761b0e85371af4158c
+PODFILE CHECKSUM: 7e3cc82ba634f251ad4b82d32c0e60872fbdad2f
 
 COCOAPODS: 1.10.0
